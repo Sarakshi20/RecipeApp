@@ -1,0 +1,36 @@
+.account{
+    border: black 2px solid; 
+    border-radius: 10px;
+}
+.account:hover{
+    background-color: black;
+    color: white !important;
+}
+
+.navHov:hover{
+    color: rgba(75, 75, 75, 0.492) !important;
+}
+
+.ProfileArea{
+    background-image: url(https://twochimpscoffee.com/wp-content/uploads/2022/05/home_hero-scaled-2.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    text-align: start;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+.userInfo{
+    position: relative;
+}
+
+.logout{
+    position: absolute;
+    bottom: 6rem;
+    right: 3.5rem;
+}

@@ -1,0 +1,29 @@
+.account{
+    border: black 2px solid; 
+    border-radius: 10px;
+}
+.account:hover{
+    background-color: black;
+    color: white !important;
+}
+
+.navHov:hover{
+    color: rgba(75, 75, 75, 0.492) !important;
+}
+
+.mainPage{
+    background-position: center;
+    height: 85vh;
+    background-repeat: no-repeat;
+    background-image: url(https://themes.muffingroup.com/be/recipes2/wp-content/uploads/2018/07/home_recipes2_slider_bg.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+}
+
+.Maincontent{
+    display: flex;
+    flex-direction: column;
+}
+

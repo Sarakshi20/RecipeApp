@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./signup.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background-color: white">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand ms-5"
+          href="/"
+          class="my-auto"
+          style="font-size: 30px"
+          ><img
+            height="40px"
+            src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png"
+            alt="logo"
+          />
+          FOODIES</a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-5">
+              <a
+                class="nav-link active navHov"
+                aria-current="page"
+                href="/recipes"
+                >RECIPES</a
+              >
+            </li>
+            <li class="nav-item mx-5">
+              <a class="nav-link active navHov" aria-current="page" href="#"
+                >ABOUT</a
+              >
+            </li>
+            <li class="nav-item mx-5">
+              <a class="nav-link active navHov" aria-current="page" href="#"
+                >NEWSLETTER</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search Recipe"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ms-5">
+              <a
+                class="nav-link active account"
+                aria-current="page"
+                href="/login"
+                >ACCOUNT</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="container-fluid row d-flex justify-content-center">
+        <h1>Your Recipes:</h1>
+        <% userRecipes.forEach(element => { %>
+        <div
+          class="col-md-5 col-lg-3 p-3 m-2"
+          style="
+            border: green solid 3px;
+            border-radius: 5px;
+            height: 490px;
+            overflow: scroll;
+            box-shadow: green 3px 3px;
+          "
+        >
+          <img
+            class="img-fluid"
+            src="<%=`../${element.imagePath}`%>"
+            alt="image"
+          />
+          <p style="color: rgb(174, 174, 174)" class="mt-1 mb-0">
+            <%= element.authorName%> at
+            <span style="font-weight: 400; font-size: 1rem"
+              ><%= element.date%></span
+            >
+          </p>
+          <h3 class="mb-2"><%=element.recipeName%></h3>
+          <p><%= element.desc %></p>
+          <a href="/viewRecipe/<%= element._id %>" class="btn btn-md btn-success my-1" style="color: white; text-decoration: none;">VIEW RECIPE</a>
+        </div>
+        <% }) ;%>
+      </div>
+    </div>
+    <hr />
+    <div class="container-fluid text-center">
+      <h1>Add New Recipe Here</h1>
+      <form method="post" action="/myRecipes" enctype="multipart/form-data">
+        <input
+          class="form-control inpBt my-4 mx-auto"
+          type="text"
+          placeholder="Author's Name"
+          name="auth"
+          required
+        />
+        <input
+          class="form-control inpBt my-4 mx-auto"
+          type="text"
+          placeholder="Recipe's Name"
+          name="Recipe"
+          required
+        />
+        <input
+          class="form-control inpBt my-4 mx-auto"
+          type="text"
+          placeholder="Ingredients"
+          name="Ingredients"
+          required
+        />
+        <textarea
+          class="form-control inpBt my-4 mx-auto"
+          type="text"
+          placeholder="Description"
+          name="desc"
+          maxlength="600"
+          rows="3"
+          cols="100"
+          required
+        ></textarea>
+        <textarea
+          class="form-control inpBt my-4 mx-auto"
+          type="text"
+          placeholder="Instructions"
+          name="instructions"
+          rows="5"
+          cols="400"
+          required
+        ></textarea>
+        <input
+          class="form-control inpBt my-4 mx-auto"
+          type="file"
+          accept="image/*"
+          name="RecipeImage"
+          required
+        />
+        <button type="submit" class="btn btn-lg btn-success mt-2 mb-5">
+          Submit Recipe
+        </button>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

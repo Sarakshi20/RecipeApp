@@ -1,0 +1,12 @@
+.account{
+    border: black 2px solid; 
+    border-radius: 10px;
+}
+.account:hover{
+    background-color: black;
+    color: white !important;
+}
+
+.navHov:hover{
+    color: rgba(75, 75, 75, 0.492) !important;
+}

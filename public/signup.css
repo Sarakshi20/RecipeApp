@@ -1,0 +1,45 @@
+.account{
+    border: black 2px solid; 
+    border-radius: 10px;
+}
+.account:hover{
+    background-color: black;
+    color: white !important;
+}
+
+.navHov:hover{
+    color: rgba(75, 75, 75, 0.492) !important;
+}
+
+.loginBox{
+    background-image: url(https://themes.muffingroup.com/be/recipes2/wp-content/uploads/2018/07/home_recipes2_sectionbg7.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    overflow: hidden;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    color: white; 
+}
+
+.SignUp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: auto;
+    height: 50%;
+}
+
+.Box{
+    height: 80%;
+}
+
+.inpBt{
+    width: 350px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./recipes.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: white;">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5" href="/" class="my-auto" style="font-size: 30px;"><img height="40px" src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png" alt="logo"> FOODIES</a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-5">
+                <a class="nav-link active navHov" aria-current="page" href="/recipes">RECIPES</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link active navHov" aria-current="page" href="#">ABOUT</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link active navHov" aria-current="page" href="#">NEWSLETTER</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-5">
+                  <a class="nav-link active account" aria-current="page" href="/login">ACCOUNT</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="container-fluid row d-flex justify-content-center">
+          <h1 class="text-center mb-5">Discover our Amazing Recipes</h1>
+          <% UserRecipes.forEach((user) => { %>
+            <% user.recipes.forEach((recipe) => { %>
+              <div class="col-md-5 col-lg-3 p-3 m-2" style="border: green solid 3px; border-radius: 5px; box-shadow: green 3px 3px; height: 485px; overflow: scroll;">
+                <img class="img-fluid" src="<%=`../${recipe.imagePath}`%>" alt="image"/>
+                <p style="color: rgb(174, 174, 174);" class="mt-1 mb-0"><%= recipe.authorName %> at <span style="font-weight: 400; font-size: 1rem;"><%= recipe.date %></span></p>
+                <h4 class="mb-2"><%= recipe.recipeName %></h4>
+                <p> <%= recipe.desc %> </p>
+                <a href="/viewRecipe/<%= recipe._id %>" class="btn btn-md btn-success my-1" style="color: white; text-decoration: none;">VIEW RECIPE</a>
+              </div>
+            <% }); %>
+          <% }); %>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
