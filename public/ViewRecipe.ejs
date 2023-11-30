@@ -84,21 +84,32 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid">
-        <div class="container-fluid row d-flex justify-content-center">
-            <!-- Display the details of the specific recipe -->
-            <div class="col-md-8">
-                <h1 class="text-center mb-3"><%= recipe.recipeName %></h1>
-                <p style="color: rgb(174, 174, 174);" class="mt-1 mb-0">
-                    <%= recipe.authorName %> at <span style="font-weight: 400; font-size: 1rem;"><%= recipe.date %></span>
-                </p>
-                <img class="img-fluid mb-3" src="<%=`../${recipe.imagePath}`%>" alt="Recipe Image"/>
-                <h4 class="mb-3">Ingredients</h4>
-                <p><%= recipe.ingredients %></p>
-                <h4 class="mb-3">Instructions</h4>
-                <p><%= recipe.instructions %></p>
-            </div>
+    <div class="container-fluid my-4">
+      <div class="container-fluid row d-flex justify-content-center mx-auto">
+        <!-- Display the details of the specific recipe -->
+        <div class="col-md-8 p-5" style=" border: solid 10px green;">
+          <div class="container-fluid" style="overflow: hidden; width: 50vw">
+            <img
+              class="img-fluid rounded mb-3"
+              src="<%=`../${recipe.imagePath}`%>"
+              alt="Recipe Image"
+            />
+          </div>
+          <div>
+          <h1 class="text-center mb-3" style="color: green;"><%= recipe.recipeName %></h1>
+          <p style="color: rgb(174, 174, 174)" class="mt-1 mb-0 text-center">
+            <%= recipe.authorName %> at
+            <span style="font-weight: 400; font-size: 1rem"
+              ><%= recipe.date %></span
+            >
+          </p>
+          <h4 class="mb-3 mt-5" style="color: green;">Ingredients</h4>
+          <p><%= recipe.ingredients %></p>
+          <h4 class="mb-3" style="color: green;">Instructions</h4>
+          <p><%= recipe.instructions %></p>
         </div>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

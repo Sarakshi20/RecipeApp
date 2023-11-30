@@ -140,7 +140,7 @@ app.post('/myRecipes', upload.single("RecipeImage"), async (req, res) => {
                 recipeName: req.body.Recipe,
                 ingredients: req.body.Ingredients,
                 desc: req.body.desc,
-                instruction: req.body.instructions,
+                instructions : req.body.instructions,
                 date: ISTTime.getDate() + "/" + ISTTime.getMonth() + "/" + ISTTime.getFullYear(),
                 imagePath: req.file.path
             }

@@ -10,3 +10,11 @@
 .navHov:hover{
     color: rgba(75, 75, 75, 0.492) !important;
 }
+
+.heading{
+    background-image: url("https://themes.muffingroup.com/be/recipes2/wp-content/uploads/2018/07/home_recipes2_sectionbg4.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 250px;
+}

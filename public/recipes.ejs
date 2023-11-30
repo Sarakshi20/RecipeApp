@@ -39,9 +39,12 @@
           </div>
         </div>
       </nav>
-      <div class="container-fluid">
-        <div class="container-fluid row d-flex justify-content-center">
-          <h1 class="text-center mb-5">Discover our Amazing Recipes</h1>
+      <div class="container-fluid p-0 mb-4">
+        <div class="container-fluid row d-flex justify-content-center p-0">
+          <div class="container-fluid heading px-5">
+          <h4 style="color: green;" class="mt-5">Recipes</h4>
+          <h1 class=" mt-2 mb-5">Discover our Amazing Recipes</h1>
+        </div>
           <% UserRecipes.forEach((user) => { %>
             <% user.recipes.forEach((recipe) => { %>
               <div class="col-md-5 col-lg-3 p-3 m-2" style="border: green solid 3px; border-radius: 5px; box-shadow: green 3px 3px; height: 485px; overflow: scroll;">
