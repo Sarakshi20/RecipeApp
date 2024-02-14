@@ -37,7 +37,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 // connecting MongoDb
-main().catch(err => console.log(err));
+main().catch(err => console.log(err + "not connected"));
 
 async function main() {
     await mongoose.connect(process.env.MONGODB_URL);
