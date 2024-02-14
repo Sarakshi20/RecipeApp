@@ -2,7 +2,8 @@ const {
     app,
     User
 } = require('./database');
-const PORT = 3000;
+require('dotenv').config()
+const PORT = process.env.PORT;
 const passport = require("passport");
 
 //multer disk setup

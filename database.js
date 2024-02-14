@@ -40,7 +40,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/User');
+    await mongoose.connect(process.env.MONGODB_URL);
+    console.log( "Connected to MongoDB" );
 }
 
 // creating Schema for Recipe
